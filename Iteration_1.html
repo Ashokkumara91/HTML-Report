@@ -1,0 +1,406 @@
+<html>
+<!-- Styles -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.main{
+float : left;
+height:200px;
+border:3px solid; 
+border-color:white;
+}
+.Head{
+width:1340px; 
+height:60px; 
+color: white;
+text-align:center;
+font-size:40px;
+font-family:Georgia;
+border:3px solid; 
+border-color:white;
+padding: 2px;
+}
+
+.Head2{
+color: white;
+text-align:Center;
+font-size:18px;
+font-family:Georgia;
+}
+
+
+#h2{
+font-size:30px;
+font-family:Georgia;
+}
+
+
+
+body {
+  background: #1C2833;
+  text-align: center;
+  font-family:Lucida Bright;
+}
+
+section {
+
+  display: inline-block;
+  width: -500px;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 10px;
+  text-align: center;
+  text-color: white;
+  min-width: 120px;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  background: #eee;
+  padding: 3px;
+  font-weight: 100;
+  font-size: 12px;
+  border-radius: 2px;
+  border: 1px solid  #ddd;
+  bottom: 100%;
+  left: 50%;
+  opacity: 0;
+  transition: 0.3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.tooltip:after {
+  content: "" attr(tooltip) "";
+  margin-left: 3px;
+  color: #2DABD8;
+}
+.tooltip:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #2DABD8;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.graph {
+  width: 150px;
+  height: 75px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  line-height: 280px;
+  font-weight: 600;
+  border-radius: 150px 150px 0 0;
+  overflow: hidden;
+  color: #0ff;
+}
+.graph:before, .graph:after {
+  content: '';
+  width: 150px;
+  height: 75px;
+  border: 30px solid #0ff;
+  border-top: none;
+  position: absolute;
+  transition: 0.3s;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  border-radius: 0 0 300px 300px;
+  -webkit-animation: demo 2s;
+  animation: demo 2s;
+  left: 0;
+  top: 100%;
+  z-index: 5;
+}
+.graph:after {
+  z-index: 3;
+  border-color: rgba(0, 0, 0, 0.15);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.graph:hover:before {
+  opacity: .8;
+  cursor: pointer;
+}
+.graph:hover + .tooltip {
+  bottom: 105%;
+  opacity: 1;
+}
+
+
+
+.model-1 .graph {
+  color: #EC4A26;
+}
+.model-1 .graph:before {
+  -webkit-transform: rotate(100deg);
+  transform: rotate(180deg);
+  border-color: #00FFFF;
+}
+
+section.model-2 .graph {
+  color: #2DABD8;
+}
+section.model-2 .graph:before {
+  -webkit-transform: rotate(130deg);
+  transform: rotate(112.5deg);
+  border-color: #00FF00;
+}
+section.model-3 .graph {
+  color: #2DABD8;
+}
+section.model-3 .graph:before {
+  -webkit-transform: rotate(130deg);
+  transform: rotate(67.5deg);
+  border-color: #FF0000;
+}
+
+
+
+@-webkit-keyframes demo {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@keyframes demo {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+
+
+
+:root {
+  --size: 140px;
+  --bord: 30px;
+}
+
+.chart {
+border:1.5px solid; 
+border-color:white;
+  width: var(--size);
+  height: var(--size);
+  margin: 1em auto;
+  border-radius: 50%;
+   background-image: conic-gradient(Lime var(--value), red var(--value));
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart::after {
+  content: "";
+border:1.5px solid; 
+border-color:white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - var(--bord));
+  height: calc(100% - var(--bord));
+  background: #1F2428;
+  border-radius: inherit;
+}
+
+p { position: relative;
+  z-index: 1;
+  font-size: 2em;
+}
+
+.x-60 {
+  --value: 62%;
+  color:white;
+}
+
+#myTable1 #td1{
+    text-align:left;
+	font-size:15px;
+}
+
+#myTable1 td{
+    text-align:Center;
+	font-size:15px;
+}
+
+#myTable1 tr:nth-child(even){background-color:#1C2833;}
+#myTable1 tr:nth-child(odd){background-color:#212F3D;}
+#myTable1 tr:hover {background-color: #4D5656;}
+
+#myTable1 th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: black;
+    color: white;    
+}
+
+
+
+
+
+
+#myTable #td1{
+    text-align:left;
+	font-size:14px;
+}
+
+#myTable td{
+    text-align:Center;
+	font-size:14px;
+}
+
+#myTable tr:nth-child(even){background-color:#1C2833;}
+#myTable tr:nth-child(odd){background-color:#212F3D;}
+#myTable tr:hover {background-color: #4D5656;}
+
+#myTable th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: black;
+    color: white;    
+}
+
+#content::-webkit-scrollbar {
+        width: 0 !important;
+    }
+	body::-webkit-scrollbar {
+        width: 0 !important;
+    }
+	td {
+  word-break: break-all;
+}
+
+td {
+  word-break: break-all;
+}
+form
+{
+margin-left: 50;
+
+}
+
+fieldset {  
+  
+  margin: 25px;
+  text-align: left;
+  height: auto;
+  width: 650;
+  color: white; 
+}
+
+
+</style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
+  </script> 
+	
+<!-- HTML -->
+<body style="width:1340px; display:block;">
+
+<div class="Head"><a style="padding-right: 200px">Automation Execution Result</a>
+<img src="\\192.169.1.55\Automation reports\SCUF\Report Repository\Templates\HTML Template\Novac_logo_footer.png" width="200" height="50" align="left">
+
+</div>
+
+
+<div class="Main" style="width:500px;color: white; ">
+
+<table id = "mytable1" align="left" cellpadding="10" style = "width:490; height:190px; border collapse: 1px solid gray; margin: 3; text-align: center; color: white;"> 
+<col width="170"><col width="auto"><col width="auto">
+<tr><td id="td1"><b>Scenario</b></td><td> : </td><td>Login with Negative Data</td></tr>
+<tr><td id="td1"><b>Iteration Start Time</b></td><td> : </td><td>05:21:06.600</td></tr>
+<tr><td id="td1"><b>Iteration End Time</b></td><td> : </td><td>05:21:58.501</td></tr>
+<tr><td id="td1"><b>Duration</b></td><td> : </td><td>00:00:51.901</td></tr>
+</tbody>
+</table> 
+</div>
+
+<div class="Main" style= "width:600px;">
+<section class="model-1">
+  <div class="graph"></div><span class="tooltip" tooltip="8">Total Steps</span>
+<div style="color: white;padding-bottom:10px;font-size:20px"><b>8</b></div>
+<div style="color: white;">Total Steps</div>
+  
+</section>
+<section class="model-2">
+  <div class="graph"></div><span class="tooltip" tooltip="5">Passed Steps</span>
+<div style="color: white; padding-bottom:10px;font-size:20px"><b>5</b></div>
+<div style="color: white;">Passed Steps</div>
+  </section>
+<section class="model-3">
+  <div class="graph"></div><span class="tooltip" tooltip="3">Not-Executed Steps</span>
+<div  style="color: white;padding-bottom:10px; font-size:20px"><b>3</b></div>
+<div style="color: white;">Not-Executed Steps</div>
+  </section>
+</div>
+
+<div class="Main" style= "width:240px;">
+<div class = "Head2" style = "text-align: center; color: white; margin: 7;">Step-Wise Pass Percentage</div>
+<div style ="margin-top: 8;" class="chart x-60">
+  <p>62%</p>
+</div>
+</div>
+
+
+<div id = "content" style= "height:400px; width:1000px; border: 3px solid white; float : left; overflow-y: scroll; color: white;" >
+
+<div style="width:1000;height:50;float : left;">
+<h2 style="text-align:left; margin-left: 10px;">Iteration 1</h2>
+</div>
+<div> 
+<table id = "mytable" align="left" cellpadding="10" style = "width:auto; height:auto; border collapse: 1px solid gray; margin: 5; text-align: center; color: white;"> 
+<col width="500"><col width="150"><col width="150"><col width="150"><col width="150">
+<tr><th>Method Name</th><th>Start Time</th><th>End Time</th><th>Duration</th><th>Status</th></tr>
+<tr><td id="td1"> Launch Browser</td><td>05:21:26.199</td><td>05:21:45.717</td><td>00:00:19.518</td><td>Pass</td></tr> <tr><td id="td1"> Entering UserName</td><td>05:21:45.718</td><td>05:21:45.909</td><td>00:00:00.191</td><td>Pass</td></tr> <tr><td id="td1"> Entering Password</td><td>05:21:45.909</td><td>05:21:46.257</td><td>00:00:00.348</td><td>Pass</td></tr> <tr><td id="td1"> Entering Unit</td><td>05:21:46.257</td><td>05:21:46.471</td><td>00:00:00.214</td><td>Pass</td></tr> <tr><td id="td1"> Clicking on Submit Button</td><td>05:21:46.471</td><td>05:21:47.336</td><td>00:00:00.865</td><td>Pass</td></tr> <tr><td id="td1"> Entering Menu Id</td><td>05:21:47.336</td><td>05:21:58.501</td><td>00:00:11.165</td><td>Fail</td></tr> 
+</table>
+<form>
+<fieldset><legend>Log Info: </legend><br>Log Written Date:<br>22/04/2019 5:21:58 PM<br><br>Error Line No:<br>line 131<br><br>Exception Type:<br>OpenQA.Selenium.WebDriverTimeoutException<br><br>Error Msg:<br>Timed out after 5 seconds</fieldset>
+
+ </form>
+
+</div>  
+</div>
+
+</div>
+
+<div id = "content" style= "height:400px; width:340px; border: 3px solid white; float : left; overflow-y: scroll;" >
+<div id="h2" style = "margin-top: 30; text-align: center; color: white;">Screenshot</div>
+<div style = "margin-top: 50;">
+<a href="E:\Share\Template_New\Screenshot\Fail_0.png"  target="_blank" ><img src="E:\Share\Template_New\Screenshot\Fail_0.png" title="Example Image Link" width="300" height="200" /></a>
+</div>
+<div></div>
+
+</div>
+
+
+
+
+
+</div>
+  
+</body>
+
+
+</html>
