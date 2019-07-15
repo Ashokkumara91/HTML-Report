@@ -1,0 +1,7 @@
+c:\users\svsa784\documents\visual studio 2015\Projects\HTMLReport\HTMLReport\bin\Debug\HTMLReport.dll
+c:\users\svsa784\documents\visual studio 2015\Projects\HTMLReport\HTMLReport\bin\Debug\HTMLReport.pdb
+c:\users\svsa784\documents\visual studio 2015\Projects\HTMLReport\HTMLReport\bin\Debug\NReco.ImageGenerator.dll
+c:\users\svsa784\documents\visual studio 2015\Projects\HTMLReport\HTMLReport\bin\Debug\NReco.ImageGenerator.xml
+c:\users\svsa784\documents\visual studio 2015\Projects\HTMLReport\HTMLReport\obj\Debug\HTMLReport.csprojResolveAssemblyReference.cache
+c:\users\svsa784\documents\visual studio 2015\Projects\HTMLReport\HTMLReport\obj\Debug\HTMLReport.dll
+c:\users\svsa784\documents\visual studio 2015\Projects\HTMLReport\HTMLReport\obj\Debug\HTMLReport.pdb
